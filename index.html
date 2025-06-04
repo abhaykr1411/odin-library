@@ -83,7 +83,8 @@
     </div>
 
     <dialog data-modal class="modal">
-        <form id="form" action="/">
+        <form id="form">
+            <button class="modal-close" formmethod="dialog" type="submit" aria-label="Close">&times;</button>
             <h3>Add a Book</h3>
             <div class="input-control">
                 <label for="title">Title: </label>
@@ -105,7 +106,11 @@
                 <input type="number" name="year" id="year">
                 <div class="error"></div>
             </div>
-
+            <div class="input-control checkbox-control">
+                <label for="read">Read: </label>
+                <input type="checkbox" name="read" id="read">
+                <div class="error"></div>
+            </div>
             <button type="submit">submit</button>
         </form>
         <!-- <button data-close-modal>Close</button> -->

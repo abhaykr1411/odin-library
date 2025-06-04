@@ -119,62 +119,99 @@ main .add-button {
 }
 
 .modal {
-    width: 300px;
-    padding: 20px;
-  position: fixed; /* or absolute */
+  width: 300px;
+  padding: 20px;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-background-color: whitesmoke;
-    border-radius: 4px;
-    border-color: white;
-    font-size: 12px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  border-color: white;
+  font-size: 12px;
 }
 
-#form h3{
-    color: #0f2027;
-    text-align: center;
+#form h3 {
+  color: #0f2027;
+  text-align: center;
 }
 
-#form button{
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-    color: white;
-    background-color: var(--darkest-color);
-    border: none;
-    border-radius: 4px;
+#form button {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  background-color: var(--darkest-color);
+  border: none;
+  border-radius: 4px;
 }
 
-.input-control{
-    display: flex;
-    flex-direction: column;
+.input-control {
+  display: flex;
+  flex-direction: column;
 }
 
-.input-control input{
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    display: block;
-    font-size: 12px;
-    padding: 10px;
-    width: 100%;
+.input-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 12px;
+  padding: 10px;
+  width: 100%;
 }
 
-.input-control input:focus{
-    outline: 0;
+.input-control input:focus {
+  outline: 0;
 }
 
-.input-control.success input{
-    border-color: #09c372;
+.input-control.success input {
+  border-color: #09c372;
 }
 
-.input-control.error input{
-    border-color: #ff3860;
+.input-control.error input {
+  border-color: #ff3860;
 }
 
-.input-control .error
-{
-    color: #ff3860;
-    font-size: 9px;
-    height: 13px;
+.input-control .error {
+  color: #ff3860;
+  font-size: 9px;
+  height: 13px;
 }
+
+.modal #form .modal-close {
+width: 20px;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #333;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 6px;
+  transition: color 0.15s;
+}
+
+.modal #form .modal-close:hover,
+.modal #form .modal-close:focus {
+  color: #ff3860;
+  outline: none;
+}
+
+.checkbox-control {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-control label {
+  margin-bottom: 0;
+}
+
+.checkbox-control input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+

@@ -1,4 +1,15 @@
 const myLibrary = [];
+const addBookButton = document.querySelector("[data-open-modal]");
+const closeButton = document.querySelector("[data-close-modal]");
+const modal = document.querySelector("[data-modal]");
+
+addBookButton.addEventListener("click", () =>{
+    modal.showModal();
+});
+
+closeButton.addEventListener("click", () =>{
+    modal.close();
+});
 
 function Book(BookID, title, author, pages, isRead)
 {

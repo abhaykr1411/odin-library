@@ -9,7 +9,7 @@
 :root {
   --darkest-color: #a0c878;
   --lightest-color: #fffdf6;
-  --main-bg-color: #faf6e9;
+  --main-bg-color: #f5f0e1;
   --github-color: #2b3a42;
 }
 
@@ -54,17 +54,127 @@ footer {
   font-size: 1rem;
 }
 
-.github-icon{
-    vertical-align: middle;
+.github-icon {
+  vertical-align: middle;
 }
 
-#github-id{
-    display: inline-block;
-    vertical-align: middle;
+#github-id {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 main {
   flex: 1;
   padding: 2rem;
   background-color: var(--main-bg-color);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  font-weight: 600;
+  grid-auto-rows: 190.26px;
+}
+
+.card {
+  background-color: var(--lightest-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 5px;
+}
+
+.card .title {
+  text-align: center;
+  border-bottom: 1px solid var(--github-color);
+  margin: 0 5px;
+  padding: 3px 0;
+}
+
+.card .left-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  flex: 1;
+}
+
+.card .left-align span {
+  font-weight: 400;
+}
+
+.card .right-align {
+  text-align: right;
+  padding-bottom: 5px;
+}
+
+.card .right-align button {
+  background-color: red;
+}
+
+main .add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 75px;
+}
+
+.modal {
+    width: 300px;
+    padding: 20px;
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+background-color: whitesmoke;
+    border-radius: 4px;
+    border-color: white;
+    font-size: 12px;
+}
+
+#form h3{
+    color: #0f2027;
+    text-align: center;
+}
+
+#form button{
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    background-color: var(--darkest-color);
+    border: none;
+    border-radius: 4px;
+}
+
+.input-control{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control input{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+}
+
+.input-control input:focus{
+    outline: 0;
+}
+
+.input-control.success input{
+    border-color: #09c372;
+}
+
+.input-control.error input{
+    border-color: #ff3860;
+}
+
+.input-control .error
+{
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
 }

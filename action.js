@@ -13,8 +13,16 @@ const isReadDOM = document.getElementById("read");
 
 formDOM.addEventListener("submit", (e) => {
   e.preventDefault();
+  if (e.submitter.classList.contains("modal-close")) return;
   let validInput = validateInput();
-  if(validInput){
+  if (validInput) {
+    formDOM.reset();
+    formDOM.querySelectorAll(".input-control").forEach((element) => {
+      const errorDisplay = element.querySelector(".error");
+      errorDisplay.innerText = "";
+      element.classList.remove("error");
+      element.classList.remove("success");
+    });
     modal.close();
   }
 });
@@ -66,6 +74,8 @@ const validateInput = () => {
   } else {
     setSuccess(yearDOM);
   }
+  addBookToLibrary(titleVal, authorval, pagesVal, readVal);
+  console.log(myLibrary);
   return true;
 };
 addBookButton.addEventListener("click", () => {
@@ -76,7 +86,7 @@ closeButton.addEventListener("click", () => {
   modal.close();
 });
 
-function Book(BookID, title, author, pages, isRead) {
+function Book(BookID, title, author, pages, year, isRead) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor.");
   }
@@ -84,6 +94,7 @@ function Book(BookID, title, author, pages, isRead) {
   this.title = title;
   this.author = author;
   this.pages = pages;
+  this.year = year;
   this.isRead = isRead;
 
   this.info = function () {
@@ -95,10 +106,8 @@ function Book(BookID, title, author, pages, isRead) {
   };
 }
 
-function addBookToLibrary(title, author, pages, isRead) {
+function addBookToLibrary(title, author, pages, year, isRead) {
   const bookID = crypto.randomUUID();
-  const bookCreated = new Book(bookID, title, author, pages, isRead);
+  const bookCreated = new Book(bookID, title, author, pages, year, isRead);
   myLibrary.push(bookCreated);
 }
-addBookToLibrary("the hobbit", "JK", 256, true);
-console.log(myLibrary);

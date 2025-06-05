@@ -72,7 +72,7 @@ main {
   grid-template-rows: repeat(3, 1fr);
   gap: 1rem;
   font-weight: 600;
-  grid-auto-rows: 190.26px;
+  grid-auto-rows: 140px;
 }
 
 .card {
@@ -214,4 +214,3 @@ width: 20px;
   height: 18px;
   margin: 0;
 }
-
